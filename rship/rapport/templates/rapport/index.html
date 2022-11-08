@@ -1,0 +1,17 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Description List</h1>
+  <ul>
+     {% if description_list %} 
+    {% for description in description_list %}
+      <li>
+        <a href="{{ description.get_absolute_url }}">{{ description.title }}</a>
+      </li>
+    {% endfor %}
+      
+  </ul>
+  {% else %}
+    <p>There are no entries in the repository.</p>
+  {% endif %}
+{% endblock %}
