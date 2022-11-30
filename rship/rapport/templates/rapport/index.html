@@ -15,3 +15,24 @@
     <p>There are no entries in the repository.</p>
   {% endif %}
 {% endblock %}
+
+
+########### New Index  ##################
+
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Description List</h1>
+  {% if latest_description_list %} 
+      <ul>
+          {% for description in latest_description_list %}
+              <li>
+                  <a href="/rapport/{{ pk }}/">
+                      {{ description.title }}</a>
+              </li>
+          {% endfor %}
+      </ul>
+  {% else %}
+    <p>There are no entries in the repository.</p>
+  {% endif %}
+{% endblock %}
