@@ -67,4 +67,6 @@ Using values_list:
 
                 # Getting all the field objects in django querying               
 >>>  items = Description.objects.all().values('description_text','reminder_date', 'event_date')
+>>> items
+>>> <QuerySet [{'description_text': "Info of my bro's birthday.", 'reminder_date': datetime.datetime(2023, 1, 24, 9, 0, tzinfo=datetime.timezone.utc), 'event_date': datetime.datetime(2023, 2, 3, 21, 0, tzinfo=datetime.timezone.utc)}, {'description_text': "Info on my friend's birthday.", 'reminder_date': datetime.datetime(2023, 3, 1, 9, 0, tzinfo=datetime.timezone.utc), 'event_date': datetime.datetime(2023, 3, 5, 5, 0, tzinfo=datetime.timezone.utc)}, {'description_text': "Info of my cousin's birthday.", 'reminder_date': datetime.datetime(2023, 6, 5, 9, 0, tzinfo=datetime.timezone.utc), 'event_date': datetime.datetime(2023, 6, 15, 3, 0, tzinfo=datetime.timezone.utc)}, {'description_text': 'Info of my birthday.', 'reminder_date': datetime.datetime(2023, 7, 1, 15, 0, tzinfo=datetime.timezone.utc), 'event_date': datetime.datetime(2023, 7, 12, 5, 0, tzinfo=datetime.timezone.utc)}, {'description_text': "Info on my mum's birthday.", 'reminder_date': datetime.datetime(2023, 7, 31, 9, 0, tzinfo=datetime.timezone.utc), 'event_date': datetime.datetime(2023, 8, 3, 5, 0, tzinfo=datetime.timezone.utc)}]>
                 
