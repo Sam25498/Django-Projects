@@ -31,3 +31,8 @@ Out[10]: <QuerySet [<Description: Emmanuel's Birthday>, <Description: Ridely's B
 
 In [11]: Description.objects.all().values('description_text')
 Out[11]: <QuerySet [{'description_text': "Info of my bro's birthday."}, {'description_text': "Info on my friend's birthday."}, {'description_text': "Info of my cousin's birthday."}, {'description_text': 'Info of my birthday.'}, {'description_text': "Info on my mum's birthday."}]>
+
+ 
+
+In [12]: Description.objects.all().values_list('description_text')
+Out[12]: <QuerySet [("Info of my bro's birthday.",), ("Info on my friend's birthday.",), ("Info of my cousin's birthday.",), ('Info of my birthday.',), ("Info on my mum's birthday.",)]>                   
