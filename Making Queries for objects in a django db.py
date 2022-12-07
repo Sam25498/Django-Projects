@@ -61,3 +61,5 @@ Using values_list:
 
 >>>  discr_items
 >>>  <QuerySet [("Info of my bro's birthday.",), ("Info on my friend's birthday.",), ("Info of my cousin's birthday.",), ('Info of my birthday.',), ("Info on my mum's birthday.",)]>
+                
+>>> discr_items = Description.objects.all().values('description_text')
