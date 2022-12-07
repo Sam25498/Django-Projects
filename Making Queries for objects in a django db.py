@@ -39,14 +39,14 @@ NameError: name 'Entry' is not defined
 12
 
 
-To get the list of usernames:
+#To get the list of usernames:
 
 >>> User.objects.all().values('username')
 >>> [{'username': u'u1'}, {'username': u'u2'}]
 
 >>> User.objects.all().values_list('username')
 >>> [(u'u1',), (u'u2',)]
-If you want just strings, a list comprehension can do the trick:
+#If you want just strings, a list comprehension can do the trick:
 
 >>> usr_names = User.objects.all().values('username')
 >>> [u['username'] for u in usr_names]
@@ -56,3 +56,8 @@ Using values_list:
 >>> usr_names = User.objects.all().values_list('username')
 >>> [u[0] for u in usr_names]
 >>> [u'u1', u'u2']
+                
+>>> discr_items = Description.objects.all().values_list('description_text')
+
+>>>  discr_items
+>>>  <QuerySet [("Info of my bro's birthday.",), ("Info on my friend's birthday.",), ("Info of my cousin's birthday.",), ('Info of my birthday.',), ("Info on my mum's birthday.",)]>
