@@ -64,3 +64,7 @@ Using values_list:
                 
 >>> discr_items = Description.objects.all().values('description_text')
 >>>  <QuerySet [{'description_text': "Info of my bro's birthday."}, {'description_text': "Info on my friend's birthday."}, {'description_text': "Info of my cousin's birthday."}, {'description_text': 'Info of my birthday.'}, {'description_text': "Info on my mum's birthday."}]>
+
+                # Getting all the field objects in django querying               
+>>>  items = Description.objects.all().values('description_text','reminder_date', 'event_date')
+                
