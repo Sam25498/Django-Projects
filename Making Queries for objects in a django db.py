@@ -74,3 +74,15 @@ Using values_list:
  'description_text': "Info of my bro's birthday.",
  'reminder_date': datetime.datetime(2023, 1, 24, 9, 0, tzinfo=datetime.timezone.utc),
  'event_date': datetime.datetime(2023, 5, 6, 21, 0, tzinfo=datetime.timezone.utc)}, {...}]                
+>>># Making query for one record.
+>>> item_1 = Description.objects.all().values('title','description_text','reminder_date', 'event_date')[0]
+>>> item_1                
+                
+                
+                
+                
+                
+                
+                
+                
+                
