@@ -29,5 +29,11 @@ def test_calendar():
     },
     }
 
+    service.events().insert(calendarId=CAL_ID, body=new_event).execute()
+    print('Event created')
+
+ # GET ALL EXISTING EVENTS
+    events_result = service.events().list(calendarId=CAL_ID, maxResults=2500).execute()
+    events = events_result.get('items', [])
 
 
