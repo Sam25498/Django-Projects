@@ -13,3 +13,8 @@ def index(request):
         'latest_description_list' : latest_description_list,
     }
     return HttpResponse(template.render(context, request))
+
+def demo(request):
+    results = test_calendar()
+    context = {"results": results}
+    return render(request, 'demo.html', context)
