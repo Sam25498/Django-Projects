@@ -20,4 +20,14 @@ def test_calendar():
     'description': 'https://benhammond.tech',
     'start': {
 
+        'date':'2023-01-07T07:00:00',
+        'timeZone': 'Africa/Nairobi',
+    },
+    'end': {
+        'date':'2023-01-10T07:00:00',
+        'timeZone': 'Africa/Nairobi',
+    },
+    }
+
+
 
