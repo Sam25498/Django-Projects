@@ -36,4 +36,10 @@ def test_calendar():
     events_result = service.events().list(calendarId=CAL_ID, maxResults=2500).execute()
     events = events_result.get('items', [])
 
+    # LOG THEM ALL OUT IN DEV TOOLS CONSOLE
+    for e in events:
+
+        print(e)
+
+
 
