@@ -42,4 +42,9 @@ def test_calendar():
         print(e)
 
 
+    #uncomment the following lines to delete each existing item in the calendar
+    #event_id = e['id']
+        # service.events().delete(calendarId=CAL_ID, eventId=event_id).execute()
 
+
+    return eventsv
