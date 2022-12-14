@@ -47,4 +47,4 @@ def test_calendar():
         # service.events().delete(calendarId=CAL_ID, eventId=event_id).execute()
 
 
-    return eventsv
+    return events
