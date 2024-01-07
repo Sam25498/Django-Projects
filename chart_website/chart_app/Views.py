@@ -22,7 +22,18 @@ def chart_input(request):
             data_input = form.cleaned_data['data_input']
 
 
-    
+             chart_data = ChartData(data_type=data_type, chart_type=chart_type, data=data_input)
+            chart_data.save()
+
+            generate_chart(data_type, chart_type, data_input)
+
+            return redirect('chart_output')
+    else:
+        form = ChartForm()
+
+    return render(request, 'chart_app/chart_input.html', {'form': form})
+
+
 
 
 
