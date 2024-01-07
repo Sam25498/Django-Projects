@@ -34,8 +34,7 @@ def chart_input(request):
     return render(request, 'chart_app/chart_input.html', {'form': form})
 
 
-
-
-
+def chart_output(request):
+    return render(request, 'chart_app/chart_output.html')   
 
 
