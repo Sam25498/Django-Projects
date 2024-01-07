@@ -12,6 +12,16 @@ def index(request):
         'latest_charts_list': latest_charts_list,
     }
     return HttpResponse(template.render(context, request))
+
+def chart_input(request):
+    if request.method == 'POST':
+        form = ChartForm(request.POST)
+        if form.is_valid():
+            data_type = form.cleaned_data['data_type']
+            chart_type = form.cleaned_data['chart_type']
+            data_input = form.cleaned_data['data_input']
+
+
     
 
 
