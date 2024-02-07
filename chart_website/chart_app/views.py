@@ -331,5 +331,40 @@ class GenerateChartView(View):
             return HttpResponse(f"An unexpected error occurred: {e}")
         
 
+from django.shortcuts import render, redirect, get_object_or_404
+from django.views import View
+from .models import ChartData
+from .forms import ChartForm
+from django.urls import reverse  # Import the reverse function
+
+class EditChartView(View):
+    template_name = 'chart_app/edit_chart.html'
+
+    def get(self, request, data_title):
+        # Retrieve the existing ChartData instance
+        chart_data = get_object_or_404(ChartData, data_title=data_title)
+
+        # Populate the form with existing data
+        form = ChartForm(instance=chart_data)
+
+        return render(request, self.template_name, {'form': form, 'chart_data': chart_data})
+
+    def post(self, request, data_title):
+        chart_data = get_object_or_404(ChartData, data_title=data_title)
+        form = ChartForm(request.POST, instance=chart_data)
+
+        if form.is_valid():
+            # Save the updated form, which will update the model's JSONField
+            form.save()
+            
+            # Use reverse to dynamically generate the URL for ChartDetailView
+            chart_detail_url = reverse('chart_app:detail', kwargs={'data_title': data_title})
+
+            return redirect(chart_detail_url)  # Redirect to chart_detail page
+
+
+        return render(request, self.template_name, {'form': form, 'chart_data': chart_data})
+
+
 
 
