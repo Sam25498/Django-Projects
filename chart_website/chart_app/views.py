@@ -75,6 +75,22 @@ class AddChartView(View):
 
     
     
+from django.shortcuts import render
+from django.views import View
+from django.http import HttpResponse
+import matplotlib
+from matplotlib import rcParams
+import matplotlib.ticker as mtick
+
+import matplotlib.pyplot as plt
+from io import BytesIO
+import seaborn as sns
+import base64
+import json
+
+from .models import ChartData
+
+
 
 
 
