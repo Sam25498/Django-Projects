@@ -367,4 +367,10 @@ class EditChartView(View):
 
 
 
-
+class ResultsView(generic.DetailView):
+    model = ChartData
+    template_name = 'chart_app/chart_output.html'
+    
+    def get_queryset(self):
+        
+        return ChartData.objects.filter(pub_date__lte=timezone.now())
