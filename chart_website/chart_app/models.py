@@ -24,3 +24,5 @@ chart_type = models.CharField(max_length=20, choices=CHART_TYPE_CHOICES)
         self.data = json.dumps(data_dict)
         self.save()
       
+    def get_icon_filename(self):
+        return f"{self.chart_type.lower().replace(' ', '')}icon1.png"
