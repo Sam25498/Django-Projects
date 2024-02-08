@@ -15,3 +15,7 @@ class ChartData(models.Model):
         ('Horizontal Bar Chart','Horizontal Bar Chart'),
     ]
     
+chart_type = models.CharField(max_length=20, choices=CHART_TYPE_CHOICES)
+    data = models.TextField(default='{}')  # Set default to an empty dictionary
+    pub_date = models.DateTimeField('date published',default=timezone.now)
+   
