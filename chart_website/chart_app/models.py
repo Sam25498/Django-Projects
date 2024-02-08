@@ -19,3 +19,8 @@ chart_type = models.CharField(max_length=20, choices=CHART_TYPE_CHOICES)
     data = models.TextField(default='{}')  # Set default to an empty dictionary
     pub_date = models.DateTimeField('date published',default=timezone.now)
    
+    def save_data(self, data_dict):
+        # Convert the Python dictionary to a JSON-formatted string
+        self.data = json.dumps(data_dict)
+        self.save()
+      
